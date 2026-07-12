@@ -7,7 +7,7 @@ Think of it as:
 
 Show "what" an object can do, not "how" it does it.
 */
-interface car {
+interface Car {
     startEngine(): void;
     stopEngine(): void;
     accelerate(): void;
@@ -15,12 +15,12 @@ interface car {
     shiftGear(gear: number): void;
 }
 
-class SportsCar implements car {
-    brand: string;
-    model: string;
-    isEngineOn: boolean;
-    currentSpeed: number;
-    currentGear: number;
+class sportsCar implements Car {
+    protected brand: string;
+    protected model: string;
+    protected isEngineOn: boolean;
+    protected currentSpeed: number;
+    protected currentGear: number;
 
     constructor(brand: string, model: string) {
         this.brand = brand;
@@ -64,7 +64,7 @@ class SportsCar implements car {
 }
 
 
-const myCar: car = new SportsCar("BMW", "M2");
+const myCar: Car = new sportsCar("BMW", "M2");
 myCar.startEngine();
 myCar.shiftGear(1);
 myCar.accelerate();
